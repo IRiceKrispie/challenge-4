@@ -1,0 +1,42 @@
+.wrapper{
+    display: flex;
+    height: 100hw;
+    background-color: blue;
+    flex-flow: row wrap;
+}
+
+/*tell all items to be 100% and have a padding of 10px */
+.wrapper > *{
+    padding: 10px;
+    flex: 1 100%;
+}
+
+
+header{
+    display: flex;
+    background: tomato;
+    justify-content: space-around;
+}
+
+
+
+.quiz-card{
+    display: flex;
+    background: black;
+    flex-direction: column;
+}
+
+#quiz{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    color: white;
+}
+
+.results{
+    position: relative;
+    width: 350px;
+    margin: auto;
+    display: none;
+    background-color: rgb(60, 12, 150);
+}
