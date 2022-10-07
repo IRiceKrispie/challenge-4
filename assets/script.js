@@ -111,8 +111,8 @@ restartBttn.addEventListener("click", function(){
     resultsPage.classList.replace('results', 'not-active');
     question1.classList.replace('not-active', 'active-question');
     submitBttn.disabled = false;
-    secondsLeft = 60;
     score = 0;
+    secondsLeft = 60;
     paused = false;
 })
 
@@ -142,6 +142,7 @@ initialsInput.addEventListener("keydown", function(event){
 
 //timer
 function setTime(){
+    
     var timeInterval = setInterval(function(){
 
         if (paused === false){ //if paused is false countdown and display time
@@ -152,9 +153,6 @@ function setTime(){
             displayTimer.textContent = "Time Left: " + secondsLeft;
         }
         
-        if(secondsLeft === 0){
-            clearInterval(timeInterval);
-        }
 
         if (secondsLeft <= 0){ //display results page if timer runs out
             question1.classList.replace('active-question', 'not-active'); //deactivate question 1
@@ -172,3 +170,4 @@ setTime(); //start timer
 function deductTime(){ //deduct time if user hits wrong button
     secondsLeft -= 40;
 }
+
