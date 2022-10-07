@@ -106,7 +106,7 @@ q3a4Bttn.addEventListener("click", function(){
 
 
 
-
+//results page
 restartBttn.addEventListener("click", function(){
     resultsPage.classList.replace('results', 'not-active');
     question1.classList.replace('not-active', 'active-question');
@@ -155,11 +155,20 @@ function setTime(){
         if(secondsLeft === 0){
             clearInterval(timeInterval);
         }
+
+        if (secondsLeft <= 0){ //display results page if timer runs out
+            question1.classList.replace('active-question', 'not-active'); //deactivate question 1
+            question2.classList.replace('active-question', 'not-active'); //deactivate question 2
+            question3.classList.replace('active-question', 'not-active'); //deactivate question 3
+            resultsPage.classList.replace('not-active', 'results'); //activate results page
+            displayTimer.textContent = "Out of time!";
+            paused = true;
+        }
     },1000);
 }
 
 setTime(); //start timer
 
 function deductTime(){ //deduct time if user hits wrong button
-    secondsLeft -= 10;
+    secondsLeft -= 40;
 }
