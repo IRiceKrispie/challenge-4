@@ -93,13 +93,13 @@ q3a3Bttn.addEventListener("click", function(){ //correct answer
     score++;
     question3.classList.replace('active-question', 'not-active');
     resultsPage.classList.replace('not-active', 'results');
-    paused = true;
+    paused = true; //pause the timer on results page
 })
 q3a4Bttn.addEventListener("click", function(){
     deductTime();
     question3.classList.replace('active-question', 'not-active');
     resultsPage.classList.replace('not-active', 'results');
-    paused = true;
+    paused = true; //pause the timer on results page
 })
 
 
@@ -121,7 +121,7 @@ submitBttn.addEventListener("click", function(){
     listEl.textContent = "Player: " + initialsInput.value + "\nScore: " + score;
     displayScore.appendChild(listEl);
     initialsInput.value="";
-    submitBttn.disabled = true;
+    submitBttn.disabled = true; //disable submit button until you play again
 })
 
 initialsInput.addEventListener("keydown", function(event){
@@ -132,10 +132,10 @@ initialsInput.addEventListener("keydown", function(event){
         listEl.textContent = "Player: " + initialsInput.value + "\nScore: " + score;
         displayScore.appendChild(listEl);
         initialsInput.value="";
-        submitBttn.disabled = true;
+        submitBttn.disabled = true; //disable submit button until you play again
     }
     else if (key === "Enter" && submitBttn.disabled === true){
-        event.preventDefault();
+        event.preventDefault(); //if submit button is disabled, prevent default
     }
 })
 
@@ -144,15 +144,14 @@ initialsInput.addEventListener("keydown", function(event){
 function setTime(){
     var timeInterval = setInterval(function(){
 
-        if (paused === false){
+        if (paused === false){ //if paused is false countdown and display time
             secondsLeft--;
             displayTimer.textContent = "Time Left: " + secondsLeft;
         }
-        if (paused === true){
+        if (paused === true){ //if paused is is true display the time it was paused at
             displayTimer.textContent = "Time Left: " + secondsLeft;
         }
         
-
         if(secondsLeft === 0){
             clearInterval(timeInterval);
         }
