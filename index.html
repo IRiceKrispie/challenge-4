@@ -14,10 +14,24 @@
     </header>
     <section class ="quiz-card">
         <div id="quiz">
-            
+            <form class ="active-question" id="question1">
+                <p>Question 1</p>
+                <button type="button" id="q1a1">Apples</button>
+                <button type="button" id="q1a2">Answer2</button>
+            </form>
+            <form class="not-active" id="question2">
+                <p>Question 2</p>
+                <button type="button" id="q2a1">Answer1</button>
+                <button type="button" id="q2a2">Answer2</button>
+            </form>
+            <form class="not-active" id="question3">
+                <p>Question 3</p>
+                <button type="button" id="q3a1">Answer1</button>
+                <button type="button" id="q3a2">Answer2</button>
+            </form>
             
         </div>
-        <form class="results">
+        <form class="not-active" id="results-page">
             <input type="text" placeholder="Initials" id="input"/>
             <button type="button" id="submit-score">Sumbit Score</button>
             <p id="score"></p>
