@@ -1,7 +1,7 @@
 .wrapper{
     display: flex;
     height: 100hw;
-    background-color: blue;
+    background-color: rgb(69, 69, 148);
     flex-flow: row wrap;
 }
 
@@ -11,41 +11,80 @@
     flex: 1 100%;
 }
 
-
+/* makes the header a flex display so that the two paragraphs are neatly displayed. */
 header{
     display: flex;
-    background: tomato;
+    border: solid red;
     justify-content: space-around;
 }
 
 
-
+/* style for quiz card section. Container for #quiz*/
 .quiz-card{
     display: flex;
-    background: black;
     flex-direction: column;
+    border: solid;
+    border-color: red;
+    margin-top: 200px;
 }
-
+/* style for quiz div */
 #quiz{
     display: flex;
     margin: auto;
     flex-direction: column;
     color: white;
 }
-
+/* style for our results page */
 .results{
     position: relative;
     width: 450px;
     margin: auto;
     display: flex;
-    background-color: rgb(60, 12, 150);
 }
-
+/* class with our flex properties so that the active question can display on screen */
 .active-question{
     display: flex;
     flex-direction: column;
 }
-
+/* applies to a class to hide it */
 .not-active{
     display: none;
+}
+
+.active-question button{
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.results button{
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 3px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+/* adjusts dimensions of input box */
+input{
+    width: 100px;
+    height: 100px;
+}
+
+/* changes color of disabled button */
+button:disabled{
+    background-color: dimgray;
+    color: linen;
+}
+
+#quiz p{
+    text-align: center;
 }
