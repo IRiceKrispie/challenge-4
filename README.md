@@ -11,7 +11,7 @@ Bootcamp Challenge-4 Code Quiz
 
 ## Links
 * Github: https://github.com/IRiceKrispie/challenge-4
-* Pages: 
+* Pages:  https://iricekrispie.github.io/challenge-4/
 
 ## Screenshots
 Start Page
