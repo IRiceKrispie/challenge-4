@@ -9,19 +9,53 @@
 </head>
 <body class="wrapper">
     <header>
-        <p>Code Quiz</p>
-        <p>Timer</p>
+        <h1>Code Quiz</h1>
+        <h2 id="timer"></h2>
     </header>
     <section class ="quiz-card">
         <div id="quiz">
-            
+            <form class="active-question" id="intro-page">
+                <h1>Welcome to the code quiz!</h1>
+                <p>You have 60 seconds to answer all the questions. Wrong answers lose you 10 seconds.</p>
+                <p>Press Start to begin!</p>
+                <button type="button" id="start-button">START</button>
+
+            </form>
+            <form class ="not-active" id="question1">
+                <h1>What pair of characters indicate an array?</h1>
+                <button type="button" id="q1a1">[ ]</button> 
+                <button type="button" id="q1a2">" "</button>
+                <button type="button" id="q1a3">( )</button>
+                <button type="button" id="q1a4">{ }</button>
+            </form>
+            <form class="not-active" id="question2">
+                <h1>Which characters represent a comment in Javascript?</h1>
+                <button type="button" id="q2a1">/**/</button>
+                <button type="button" id="q2a2">//</button>
+                <button type="button" id="q2a3">""</button>
+                <button type="button" id="q2a4">::</button>
+            </form>
+            <form class="not-active" id="question3">
+                <h1>Where are script sheets usually linked?</h1>
+                <button type="button" id="q3a1">In the head</button>
+                <button type="button" id="q3a2">After the bottom HTML tag</button>
+                <button type="button" id="q3a3">At the bottom of the body tag</button>
+                <button type="button" id="q3a4">Inside the top HTML tag</button>
+            </form>
+            <form class="not-active" id="question4">
+                <h1>Which method selects a class for styling?</h1>
+                <button type="button" id="q4a1">#class</button>
+                <button type="button" id="q4a2">.class</button>
+                <button type="button" id="q4a3">:class</button>
+                <button type="button" id="q4a4">::class</button>
+            </form>
             
         </div>
-        <form class="results">
-            <input type="text" placeholder="Initials" id="input"/>
+        <form class="not-active" id="results-page">
+            <input type="text" placeholder="Initials" minlength="2" maxlength="2" id="input"/>
             <button type="button" id="submit-score">Sumbit Score</button>
-            <p id="score"></p>
             <button type="button" id="restart-game">Restart Game</button>
+            <ul id="score"></ul>
         </form>
     </section>
     
