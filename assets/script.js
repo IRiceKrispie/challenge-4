@@ -211,4 +211,3 @@ function setTime(){
 function deductTime(){ //deduct time if user hits wrong button
     secondsLeft -= 10;
 }
-
