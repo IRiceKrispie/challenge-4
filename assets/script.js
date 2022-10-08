@@ -1,11 +1,13 @@
 var quizQuestionsContainer = document.querySelector("#quiz"); //point to our div with the quiz questions
 var resultsPage = document.querySelector("#results-page");//point to our results page form
+var startPage = document.querySelector("#intro-page"); //point to intro page
+var startBttn = document.querySelector("#start-button"); //point to our start button
 var restartBttn = document.querySelector("#restart-game");//point to our reset game button
 var submitBttn = document.querySelector("#submit-score");//point to our submit initials button
 var question1 = document.querySelector("#question1"); //point to our first question
 var question2 = document.querySelector("#question2"); //point to our second question
 var question3 = document.querySelector("#question3"); //point to our third question
-var question4 = document.querySelector("#question4");
+var question4 = document.querySelector("#question4"); //point to our fourth question
 var score = 0;
 
 var q1a1Bttn = document.querySelector("#q1a1");//point to first button in first question
@@ -28,6 +30,8 @@ var q4a2Bttn = document.querySelector("#q4a2");//point to second button in fourt
 var q4a3Bttn = document.querySelector("#q4a3");//point to third button in fourth question
 var q4a4Bttn = document.querySelector("#q4a4");//point to fourth button in fourth question
 
+
+
 var initialsInput = document.querySelector("#input"); //points to our input field
 var displayScore = document.querySelector("#score"); //points to our display score unordered list
 
@@ -36,6 +40,14 @@ var displayScore = document.querySelector("#score"); //points to our display sco
 var displayTimer = document.querySelector("#timer"); //points to the paragraph where we want our timer
 var secondsLeft = 60; //amount of time to complete the quiz
 var paused = false; //set the timer to not being paused at the start
+
+//start page logic
+startBttn.addEventListener("click", function(){
+    startPage.classList.replace('active-question', 'not-active');
+    question1.classList.replace('not-active', 'active-question');
+    setTime(); //start timer when button is hit
+})
+
 
 //quiz logic
 //question1
@@ -146,7 +158,7 @@ restartBttn.addEventListener("click", function(){
 
 submitBttn.addEventListener("click", function(){
     var listEl = document.createElement("li");
-    listEl.textContent = "Player: " + initialsInput.value + "\nScore: " + score;
+    listEl.textContent = "Player: " + initialsInput.value + " Score: " + score;
     displayScore.appendChild(listEl);
     initialsInput.value="";
     submitBttn.disabled = true; //disable submit button until you play again
@@ -157,7 +169,7 @@ initialsInput.addEventListener("keydown", function(event){
     if (key === "Enter" && submitBttn.disabled === false){
         event.preventDefault();
         var listEl = document.createElement("li");
-        listEl.textContent = "Player: " + initialsInput.value + "\nScore: " + score;
+        listEl.textContent = "Player: " + initialsInput.value + " Score: " + score;
         displayScore.appendChild(listEl);
         initialsInput.value="";
         submitBttn.disabled = true; //disable submit button until you play again
@@ -189,12 +201,11 @@ function setTime(){
             question4.classList.replace('active-question', 'not-active'); //deactivate question 4
             resultsPage.classList.replace('not-active', 'results'); //activate results page
             displayTimer.textContent = "Out of time!";
+            displayTimer.style.color = "red";
             paused = true;
         }
     },1000);
 }
-
-//setTime(); //start timer
 
 function deductTime(){ //deduct time if user hits wrong button
     secondsLeft -= 10;

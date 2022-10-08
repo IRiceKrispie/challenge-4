@@ -14,8 +14,8 @@
 /* makes the header a flex display so that the two paragraphs are neatly displayed. */
 header{
     display: flex;
-    border: solid red;
     justify-content: space-around;
+    color: lavender;
 }
 
 
@@ -23,8 +23,6 @@ header{
 .quiz-card{
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-color: red;
     margin-top: 200px;
 }
 /* style for quiz div */
@@ -60,6 +58,7 @@ header{
     height: auto;
     cursor: pointer;
     margin: 3px;
+    font-size: larger;
 }
 
 .results button{
@@ -84,7 +83,17 @@ button:disabled{
     background-color: dimgray;
     color: linen;
 }
-
-#quiz p{
+/* center our header tags */
+#quiz h1{
     text-align: center;
+}
+
+#score{
+    width: 200px;
+    color: linen;
+    list-style: none;
+}
+
+#score li{
+    padding-top: 6px;
 }
