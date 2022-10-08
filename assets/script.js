@@ -8,7 +8,7 @@ var question1 = document.querySelector("#question1"); //point to our first quest
 var question2 = document.querySelector("#question2"); //point to our second question
 var question3 = document.querySelector("#question3"); //point to our third question
 var question4 = document.querySelector("#question4"); //point to our fourth question
-var score = 0;
+var score = 0; //variable to hold our score
 
 var q1a1Bttn = document.querySelector("#q1a1");//point to first button in first question
 var q1a2Bttn = document.querySelector("#q1a2"); //point to second button in first question
@@ -150,6 +150,7 @@ q4a4Bttn.addEventListener("click", function(){
 restartBttn.addEventListener("click", function(){
     resultsPage.classList.replace('results', 'not-active');
     question1.classList.replace('not-active', 'active-question');
+    displayTimer.style.color = "lavender";
     submitBttn.disabled = false;
     score = 0;
     secondsLeft = 60;
